@@ -9,7 +9,6 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      binding.pry
       @@items.each do |i|
         if i.name == item
           resp.write "#{i.name}, #{i.price}\n"
