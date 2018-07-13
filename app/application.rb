@@ -31,20 +31,21 @@ class Application
     resp.finish
   end
 
-  def add_item(item)
-    if @@items.include?(item)
-      @@cart << item
-      return "added #{item}\n"
-    else 
-      return "We don't have that item"
-    end
-  end
+  # def add_item(item)
+  #   if @@items.include?(item)
+  #     @@cart << item
+  #     return "added #{item}\n"
+  #   else 
+  #     return "We don't have that item"
+  #   end
+  # end
   
-  def handle_search(search_term)
-    if @@items.include?(search_term)
-      return "#{search_term} is one of our items"
-    else
-      return "Couldn't find #{search_term}"
-    end
-  end
+  # def handle_search(search_term)
+  #   if @@items.include?(search_term)
+  #     return "#{search_term} is one of our items"
+  #   else
+  #     return "Couldn't find #{search_term}"
+  #   end
+  # end
+  
 end
