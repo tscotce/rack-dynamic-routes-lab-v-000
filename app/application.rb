@@ -10,11 +10,12 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
       binding.pry
-      if !@@items.include?(item) 
-        resp.write "Item not found\n"
-        resp.status = 400
-      else @@items.each do |item|
-          resp.write "#{item.name}, #{item.price}\n"
+      @@items.each do |i|
+        if i.name == item
+          resp.write "#{i.name}, #{i.price}\n"
+        else 
+          resp.write "Item not found\n"
+          resp.status = 400
         end
       end
     else
