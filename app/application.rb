@@ -9,6 +9,7 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
+      binding.pry
       if !@@items.include?(item) 
         resp.write "Item not found\n"
         resp.status = 400
