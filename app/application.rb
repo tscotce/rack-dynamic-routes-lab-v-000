@@ -13,8 +13,8 @@ class Application
         resp.write "#{item.name}, #{item.price}\n"
       end
     elsif req.path.match(/items/)
+    binding.pry
       item = req.params["item"]
-      binding.pry
       if !@@items.include?(item) 
         resp.write "Item not found\n"
         resp.status = 400
