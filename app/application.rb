@@ -9,20 +9,13 @@ class Application
 
     if req.path.match(/items/)
       item = req.path.split("/items/").last
-      if @@items.include?(item) 
-        @@items.each do |item|
-          resp.write "#{item.name}, #{item.price}\n"
-        end
-      else 
+      if !@@items.include?(item) 
         resp.write "Item not found\n"
         resp.status = 400
+      else @@items.each do |item|
+          resp.write "#{item.name}, #{item.price}\n"
+        end
       end
-    # elsif req.path.match(/items/)
-    #   item = req.path.split("/items/").last
-    #   if !@@items.include?(item) 
-    #     resp.write "Item not found\n"
-    #     resp.status = 400
-    # end
     else
       resp.write "Route not found\n"
       resp.status = 404
