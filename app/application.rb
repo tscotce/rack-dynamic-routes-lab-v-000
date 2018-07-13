@@ -13,6 +13,7 @@ class Application
       end
     elsif req.path.match(/items/)
       !@@items.contains? 
+      resp.write "Item not found"
     else
       resp.write "Route not found"
       resp.status = 404
