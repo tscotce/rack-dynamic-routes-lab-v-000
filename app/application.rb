@@ -11,6 +11,8 @@ class Application
       @@items.each do |item|
         resp.write "#{item.name}, #{item.price}\n"
       end
+    elsif req.path.match(/items/)
+      !@@items.contains? 
     else
       resp.write "Route not found"
       resp.status = 404
