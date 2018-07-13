@@ -13,7 +13,7 @@ class Application
       end
     elsif req.path.match(/items/)
       item = req.params["item"]
-      if @@items.include?(item) 
+      if !@@items.include?(item) 
       resp.write "Item not found"
       resp.status = 400
     else
