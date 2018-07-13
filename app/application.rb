@@ -13,6 +13,7 @@ class Application
       end
     elsif req.path.match(/items/)
       item = req.params["item"]
+      binding.pry
       if !@@items.include?(item) 
         resp.write "Item not found\n"
         resp.status = 400
