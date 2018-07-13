@@ -26,6 +26,7 @@ class Application
     #   resp.write handle_search(search_term)
     else
       resp.write "Route not found"
+      resp.status 404
     end
 
     resp.finish
