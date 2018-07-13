@@ -12,14 +12,12 @@ class Application
       @@items.each do |i|
         if i.name == item
           resp.write "#{i.name}, #{i.price}\n"
-          # resp.status = 200
+          resp.status = 200
         else 
           resp.write "Item not found\n"
           resp.status = 400
         end
-        resp.status = 200
       end
-      
     else
       resp.write "Route not found\n"
       resp.status = 404
