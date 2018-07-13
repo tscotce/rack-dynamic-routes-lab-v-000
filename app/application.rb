@@ -9,7 +9,7 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
-        resp.write "#{item}, #{item.price}\n"
+        resp.write "#{item.name}, #{item.price}\n"
       end
     # elsif req.path.match(/cart/) 
     #   if @@cart.length == 0
