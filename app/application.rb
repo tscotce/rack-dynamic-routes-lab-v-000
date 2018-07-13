@@ -25,7 +25,7 @@ class Application
     #   search_term = req.params["q"]
     #   resp.write handle_search(search_term)
     else
-      resp.write "Route Not Found"
+      resp.write "Route not found"
     end
 
     resp.finish
